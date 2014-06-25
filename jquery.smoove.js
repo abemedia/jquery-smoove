@@ -1,4 +1,4 @@
-/*! jQuery Smoove v0.2.5 | (c) 2014 Adam Bouqdib | abemedia.co.uk/license */
+/*! jQuery Smoove v0.2.6 | (c) 2014 Adam Bouqdib | abemedia.co.uk/license */
 (function ($, window, document){
     
     $.fn.smoove = function (options){
@@ -35,24 +35,20 @@
         });
         
         // function for adding vendor prefixes
-        function crossBrowser(property, value, prefixVal) {
+        function crossBrowser(property, value, prefix) {
         
             function ucase(string) {
                 return string.charAt(0).toUpperCase() + string.slice(1);
             }
             
-            // add prefix to property value
-            function prefix(string, value) {
-                if(prefixVal) return string.replace(prefixVal, prefix + prefixVal);
-                else return string;
+            var vendor = ['webkit','moz','ms','o'],
+                properties = {};
+                
+            for(i in vendor) {
+                if(prefix) value = value.replace(prefix, '-' + vendor[i] + '-' + prefix);
+                properties[ucase(vendor[i]) + ucase(property)] = value;
             }
-            
-            properties = {}
-            properties['Webkit' + ucase(property)] = prefix(value, '-webkit-'),
-            properties['Moz' + ucase(property)] = prefix(value, '-moz-'),
-            properties['Ms' + ucase(property)] = prefix(value, '-ms-'),
-            properties['O' + ucase(property)] = prefix(value, '-o-'),
-            properties[property] = value
+            properties[property] = value;
             
             return properties;
         }
@@ -127,9 +123,13 @@
             for(i in $.fn.smoove.items) {
                 var $item = $.fn.smoove.items[i],
                     params = $item.params,
+                    height = $(window).height(),
                     // if direction isn't set, set offset to 0 to avoid hiding objects that are above the fold
                     offset = (direction) ? params.offset : 0,
-                    itemtop = $(window).scrollTop() + $(window).height() - $item.data('top');
+                    itemtop = $(window).scrollTop() + height - $item.data('top');
+                    
+                // offset in %
+                if(typeof offset == 'string' && offset.indexOf('%')) offset = parseInt(offset) / 100 * height;
                 
                 if(itemtop < offset) {
                     if(params.opacity !== false) $item.css({opacity: params.opacity});
