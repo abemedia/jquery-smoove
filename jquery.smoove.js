@@ -1,9 +1,8 @@
-/*! jQuery Smoove v0.2.1 | (c) 2014 Adam Bouqdib | abemedia.co.uk/license */
+/*! jQuery Smoove v0.2.4 | (c) 2014 Adam Bouqdib | abemedia.co.uk/license */
 (function ($, window){
     
     $.fn.smoove = function (options){
-        var settings = $.extend({}, $.fn.smoove.defaults, options);
-        $.fn.smoove.init(this, settings);
+        $.fn.smoove.init(this, $.extend({}, $.fn.smoove.defaults, options));
     };
     
     $.fn.smoove.items = [];
@@ -35,10 +34,25 @@
                 transition       : params.transition
             }
             $item.css(params.transition);
-            $item.data('offsettop', $item.offset().top);
+            $item.data('top', $item.offset().top);
             
             $.fn.smoove.items.push($item);
         });
+        
+        // function for adding vendor prefixes
+        function crossBrowser(property, value) {
+            function ucase(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+            properties = {}
+            properties['Webkit' + ucase(property)] = value,
+            properties['Moz' + ucase(property)] = value,
+            properties['Ms' + ucase(property)] = value,
+            properties['O' + ucase(property)] = value,
+            properties[property] = value
+            
+            return properties;
+        }
         
         // add event handlers
         if(!$.fn.smoove.loaded) {
@@ -61,131 +75,90 @@
                         direction = (oldHeight > height) ? direction = 'up' : 'down',
                         oldHeight = height;
                     
+                    // responsive support - reassign position values on resize
                     if(oldWidth !== width) {
                         for(i in $.fn.smoove.items) {
-                            $($.fn.smoove.items[i]).css({
-                                WebkitTransform  : '',
-                                MozTransform     : '',
-                                MsTransform      : '',
-                                OTransform       : '',
-                                transform        : '',
-                                WebkitTransition : '',
-                                MozTransition    : '',
-                                OTransition      : '',
-                                transition       : ''
-                            });
+                            $.fn.smoove.items[i].css(crossBrowser('transform', '')).css(crossBrowser('transition', ''));
                         }
                         
+                        // wait for responsive magic to finish
                         var stillResizing = self.setInterval(function() {
                             var docHeight = $(document).height();
                             if(docHeight == oldDocHeight) {
                                 window.clearInterval(stillResizing);
-                                console.log('yes');
                                 for(i in $.fn.smoove.items) {
                                     $item = $.fn.smoove.items[i];
-                                    $item.data('offsettop', $item.offset().top);
+                                    $item.data('top', $item.offset().top);
                                     $item.css($item.params.transition);
                                 }
-                                $.fn.smoove.scroll(direction);
+                                smooveIt(direction);
                             }
                             oldDocHeight = docHeight;
                         }, 500);
                     } 
-                    else $.fn.smoove.scroll(direction);
+                    else smooveIt(direction);
                     oldWidth = width;
                 }, 500);
             });
             
-            $(window).scroll(function() {
-                didScroll = true;
+            $(window).on('load', function() {
+                smooveIt();
             })
-            .on('load', function() {
-                $.fn.smoove.scroll();
-            });
             
+            // throttle scroll handler
+            .scroll(function() {
+                didScroll = true;
+            });
             setInterval(function() {
                 if ( didScroll ) {
                     didScroll = false;
                     var scrolltop = $(window).scrollTop(),
                     direction = (scrolltop < oldScroll) ? direction = 'up' : 'down';
                     oldScroll = scrolltop;
-                    $.fn.smoove.scroll(direction);
+                    smooveIt(direction);
                 }
             }, 250);
         }
-    };
-
-    $.fn.smoove.scroll = function (direction) {
-        for(i in $.fn.smoove.items) {
-            var $item = $.fn.smoove.items[i],
-                params = $item.params,
-                // if direction isn't set, set offset to 0 to avoid hiding objects that already were in the view
-                offset = (direction) ? params.offset : 0,
-                itemtop = $(window).scrollTop() + $(window).height() - $item.data('offsettop');
-            
-            if(itemtop < offset) {
-                if(params.opacity !== false) $item.css({opacity: params.opacity});
-                var transforms = [];
-                if(typeof params.move !== "undefined") transforms['translate'] = params.move;
-                if(typeof params.moveX !== "undefined") transforms['translateX'] = params.moveX;
-                if(typeof params.moveY !== "undefined") transforms['translateY'] = params.moveY;
-                if(typeof params.moveZ !== "undefined") transforms['translateZ'] = params.moveZ;
-                if(typeof params.rotate !== "undefined") transforms['rotate'] = params.rotate + 'deg';
-                if(typeof params.rotateX !== "undefined") transforms['rotateX'] = params.rotateX + 'deg';
-                if(typeof params.rotateY !== "undefined") transforms['rotateY'] = params.rotateY + 'deg';
-                if(typeof params.scale !== "undefined") transforms['scale'] = params.scale;
-                transform = '';
-                for(i in transforms) {
-                    transform += i + '(' + transforms[i] + ') ';
-                }
-                
-                if(params.moveZ || params.rotateX || params.rotateY){
-                    $item.parent().css({             
-                        WebkitPerspective : params.perspective,
-                        MozPerspective : params.perspective,
-                        MsPerspective  : params.perspective,
-                        OPerspective   : params.perspective,
-                        perspective    : params.perspective
-                        /*,
-                        WebkitTransformStyle : params.transformstyle,
-                        MozTransformStyle    : params.transformstyle,
-                        MsTransformStyle     : params.transformstyle,
-                        OTransformStyle      : params.transformstyle,
-                        transformStyle       : params.transformstyle
-                        */
-                    });
-                }
-                if(transform) {
-                    $item.css({
-                        WebkitTransform : transform,
-                        MozTransform    : transform,
-                        MsTransform     : transform,
-                        OTransform      : transform,
-                        transform       : transform
-                    });
-                }
-                if(params.transformOrigin) {
-                    $item.css({
-                        WebkitTransformOrigin : params.transformOrigin,
-                        MozTransformOrigin    : params.transformOrigin,
-                        MsTransformOrigin     : params.transformOrigin,
-                        OTransformOrigin      : params.transformOrigin,
-                        transformOrigin       : params.transformOrigin
-                    });
-                }
-            }
-            else {
-                $item.css({
-                    opacity         : 1,
-                    WebkitTransform : '',
-                    MozTransform    : '',
-                    MsTransform     : '',
-                    OTransform      : '',
-                    transform       : '',  
-                });
-            }
-        }
         
+        function smooveIt(direction) {
+            for(i in $.fn.smoove.items) {
+                var $item = $.fn.smoove.items[i],
+                    params = $item.params,
+                    // if direction isn't set, set offset to 0 to avoid hiding objects that are above the fold
+                    offset = (direction) ? params.offset : 0,
+                    itemtop = $(window).scrollTop() + $(window).height() - $item.data('top');
+                
+                if(itemtop < offset) {
+                    if(params.opacity !== false) $item.css({opacity: params.opacity});
+                    
+                    var transforms = [],
+                        properties = ['move','move3D','moveX','moveY','moveZ','rotate','rotate3d','rotateX','rotateY','rotateZ','scale','scale3d','scaleX','scaleY','skew','skewX','skewY'];
+                        
+                    for(i in properties) {
+                        if(typeof params[properties[i]] !== "undefined") transforms[properties[i]] = params[properties[i]];
+                    }
+                    
+                    transform = '';
+                    for(i in transforms) {
+                        transform += i.replace('move', 'translate') + '(' + transforms[i] + ') ';
+                    }
+                    console.log(crossBrowser('transform', transform));
+                    if(transform) {
+                        $item.css(crossBrowser('transform', transform));
+                        $item.parent().css(crossBrowser('perspective', params.perspective));
+                        //$item.parent().css(crossBrowser('transformStyle', params.transformstyle));
+                    
+                        if(params.transformOrigin) {
+                            $item.css(crossBrowser('transformOrigin', params.transformOrigin));
+                        }
+                    }
+                }
+                else {
+                    $item.css('opacity', 1).css(crossBrowser('transform', ''));
+                }
+            }
+            
+        }
     };
 
 }( jQuery, window ));
