@@ -42,12 +42,12 @@ Also note that when defining parameters via data-attributes, CamelCase names are
 | `transformOrigin` | string | `50% 50%` | Origin of the transformin pixel, percentage or keyword (left, right, top or bottom) |
 | `skewY`   | angle (e.g. `90deg`) | none | 2D skew along Y-axis |
 | `move`    | string (e.g. `100px,50%`) | none | 2D move along the X- and the Y-axis |
-| `move3d`  | string (e.g. `10px,10px,10px`) | 3D move along the X-, Y- and the Z-axis |
+| `move3d`  | string (e.g. `10px,10px,10px`) | none | 3D move along the X-, Y- and the Z-axis |
 | `moveX`   | string (e.g. `10px` or `10%`) (e.g. 10px or 10%) | none | Move the object along its X axis |
 | `moveY`   | string (e.g. `10px` or `10%`) | none | Move the object along its Y axis |
 | `moveZ`   | string (e.g. `10px` or `10%`) | none | Move the object along its Z axis |
 | `rotate`  | string (e.g. `90deg`) | none | 2D rotation |
-| `rotate3d`| string (e.g. `1,1,1,90deg`) | 3D rotation along X-, Y- and Z-axis |
+| `rotate3d`| string (e.g. `1,1,1,90deg`) | none | 3D rotation along X-, Y- and Z-axis |
 | `rotateX` | string (e.g. `90deg`) | none | 3D rotation along X-axis |
 | `rotateY` | string (e.g. `90deg`) | none | 3D rotation along Y-axis |
 | `rotateZ` | string (e.g. `90deg`) | none | 3D rotation along Z-axis |
