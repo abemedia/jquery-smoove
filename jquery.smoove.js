@@ -1,5 +1,5 @@
-/*! jQuery Smoove v0.2.4 | (c) 2014 Adam Bouqdib | abemedia.co.uk/license */
-(function ($, window){
+/*! jQuery Smoove v0.2.5 | (c) 2014 Adam Bouqdib | abemedia.co.uk/license */
+(function ($, window, document){
     
     $.fn.smoove = function (options){
         $.fn.smoove.init(this, $.extend({}, $.fn.smoove.defaults, options));
@@ -23,16 +23,11 @@
         if($('body').width() == $(window).width()) $('body').css('overflow-x','hidden');
         
         items.each(function() {
-            $item = $(this);
-            params = $item.params = $.extend({}, settings, $item.data());
+            var $item = $(this),
+                params = $item.params = $.extend({}, settings, $item.data());
+                
+            params.transition = crossBrowser('transition', params.transition, 'transform');
             
-            // css transition - if using transform add vendor prefixes
-            params.transition = {
-                WebkitTransition : params.transition.replace('transform','-webkit-transform'),
-                MozTransition    : params.transition.replace('transform','-moz-transform'),
-                OTransition      : params.transition.replace('transform','-o-transform'),
-                transition       : params.transition
-            }
             $item.css(params.transition);
             $item.data('top', $item.offset().top);
             
@@ -40,15 +35,23 @@
         });
         
         // function for adding vendor prefixes
-        function crossBrowser(property, value) {
+        function crossBrowser(property, value, prefixVal) {
+        
             function ucase(string) {
                 return string.charAt(0).toUpperCase() + string.slice(1);
             }
+            
+            // add prefix to property value
+            function prefix(string, value) {
+                if(prefixVal) return string.replace(prefixVal, prefix + prefixVal);
+                else return string;
+            }
+            
             properties = {}
-            properties['Webkit' + ucase(property)] = value,
-            properties['Moz' + ucase(property)] = value,
-            properties['Ms' + ucase(property)] = value,
-            properties['O' + ucase(property)] = value,
+            properties['Webkit' + ucase(property)] = prefix(value, '-webkit-'),
+            properties['Moz' + ucase(property)] = prefix(value, '-moz-'),
+            properties['Ms' + ucase(property)] = prefix(value, '-ms-'),
+            properties['O' + ucase(property)] = prefix(value, '-o-'),
             properties[property] = value
             
             return properties;
@@ -142,7 +145,6 @@
                     for(i in transforms) {
                         transform += i.replace('move', 'translate') + '(' + transforms[i] + ') ';
                     }
-                    console.log(crossBrowser('transform', transform));
                     if(transform) {
                         $item.css(crossBrowser('transform', transform));
                         $item.parent().css(crossBrowser('perspective', params.perspective));
@@ -161,4 +163,4 @@
         }
     };
 
-}( jQuery, window ));
+}( jQuery, window, document ));
