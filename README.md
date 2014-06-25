@@ -36,31 +36,31 @@ Also note that when defining parameters via data-attributes, CamelCase names are
 
 | Name      | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `offset`  | integer or string e.g. `10%`  | 150 | Distance to the bottom of the screen before object glides into view. |
-| `opacity` | integer (0-100) | 0 | The opacity of the object before it comes into view. ' |
+| `offset`  | integer or string  | 150 | Distance to the bottom of the screen before object glides into view e.g. `10%`. |
+| `opacity` | integer (0-100) | 0 | The opacity of the object before it comes into view. |
 | `perspective` | integer | 1000 | 3D perspective in pixels. |
-| `transformOrigin` | string | `50% 50%` | Origin of the transformin pixel, percentage or keyword (left, right, top or bottom) |
-| `skewY`   | angle (e.g. `90deg`) | none | 2D skew along Y-axis |
-| `move`    | string (e.g. `100px,50%`) | none | 2D move along the X- and the Y-axis |
-| `move3d`  | string (e.g. `10px,10px,10px`) | none | 3D move along the X-, Y- and the Z-axis |
-| `moveX`   | string (e.g. `10px` or `10%`) (e.g. 10px or 10%) | none | Move the object along its X axis |
-| `moveY`   | string (e.g. `10px` or `10%`) | none | Move the object along its Y axis |
-| `moveZ`   | string (e.g. `10px` or `10%`) | none | Move the object along its Z axis |
-| `rotate`  | string (e.g. `90deg`) | none | 2D rotation |
-| `rotate3d`| string (e.g. `1,1,1,90deg`) | none | 3D rotation along X-, Y- and Z-axis |
-| `rotateX` | string (e.g. `90deg`) | none | 3D rotation along X-axis |
-| `rotateY` | string (e.g. `90deg`) | none | 3D rotation along Y-axis |
-| `rotateZ` | string (e.g. `90deg`) | none | 3D rotation along Z-axis |
-| `scale`   | decimal or string (e.g. `2.5` or `2,0.5`) | none | 2D scale on X- and Y-axis (x,y) |
-| `scale3d` | string (e.g. `2,3,0.5`) | none | 3D scale on X-, Y- and Z-axis (x,y,z) |
-| `scaleX`  | decimal | none | 2D scale on X-axis |
-| `scaleY`  | decimal | none | 2D scale on Y-axis |
-| `skew`    | angle (e.g. `90deg,90deg`) | none | 2D skew along X- and the Y-axis |
-| `skewX`   | angle (e.g. `90deg`) | none | 2D skew along X-axis |
-| `skewY`   | angle (e.g. `90deg`) | none | 2D skew along Y-axis |
+| `transformOrigin` | string | `50% 50%` | Origin of the transformin pixel, percentage or keyword (left, right, top or bottom). |
+| `skewY`   | angle | none | 2D skew along Y-axis e.g. `90deg`. |
+| `move`    | string | none | 2D move along the X- and the Y-axis e.g. `100px,50%`. |
+| `move3d`  | string | none | 3D move along the X-, Y- and the Z-axis e.g. `10px,10px,10px`. |
+| `moveX`   | string | none | Move the object along its X axis e.g. `10px` or `10%`. |
+| `moveY`   | string | none | Move the object along its Y axis e.g. `10px` or `10%`. |
+| `moveZ`   | string | none | Move the object along its Z axis e.g. `10px` or `10%`. |
+| `rotate`  | string | none | 2D rotation e.g. `90deg`. |
+| `rotate3d`| string | none | 3D rotation along X-, Y- and Z-axis e.g. `1,1,1,90deg`. |
+| `rotateX` | string | none | 3D rotation along X-axis e.g. `90deg`. |
+| `rotateY` | string | none | 3D rotation along Y-axis e.g. `90deg`. |
+| `rotateZ` | string | none | 3D rotation along Z-axis e.g. `90deg`. |
+| `scale`   | decimal or string  | none | 2D scale on X- and Y-axis (x,y) (e.g. `2.5` or `2,0.5`). |
+| `scale3d` | string | none | 3D scale on X-, Y- and Z-axis (x,y,z) (e.g. `2,3,0.5`). |
+| `scaleX`  | decimal | none | 2D scale on X-axis. |
+| `scaleY`  | decimal | none | 2D scale on Y-axis. |
+| `skew`    | angle | none | 2D skew along X- and the Y-axis (e.g. `90deg,90deg`). |
+| `skewX`   | angle | none | 2D skew along X-axis e.g. `90deg`. |
+| `skewY`   | angle | none | 2D skew along Y-axis e.g. `90deg`. |
  
 
-## Examples
+## Demo
 
 Visit [ABE Media Web Design](http://abemedia.co.uk) to see the plugin in action.
 
