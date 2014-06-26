@@ -1,0 +1,35 @@
+{
+    "name": "jquery-smoove",
+    "title": "jQuery Smoove",
+    "version": "0.2.6",
+    "description": "A simple jQuery plugin for super sexy scrolling effects using CSS3 transitions and transforms.",
+    "keywords": [
+        "jquery",
+        "scroll",
+        "css",
+        "animation"
+    ],
+    "author": {
+        "name": "Adam Bouqdib",
+        "url": "http://abemedia.co.uk"
+    },
+    "maintainers": [
+        {
+            "name": "Adam Bouqdib",
+            "web": "http://abemedia.co.uk"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "GPLv2",
+            "url": "http://abemedia.co.uk/license"
+        }
+    ],
+    "homepage": "http://smoove.donlabs.com",
+    "bugs": "https://github.com/abeMedia/jquery-smoove/issues",
+    "docs": "http://smoove.donlabs.com",
+    "download": "http://smoove.donlabs.com",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
