@@ -14,15 +14,15 @@ The easiest way to get up and running is to load jQuery Smoove from [cdnjs](http
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js"></script>
 ```
 
-### Bower 
+### Install with Bower 
 
-Via [bower](https://github.com/twitter/bower).
+Use the following command to install jQuery Smoove using [bower](https://github.com/twitter/bower).
 
 ```
 $ bower install jquery-smoove
 ```
 
-Or add `jquery-smoove` to your `bower.json`.
+Or simply add `jquery-smoove` to your project's `bower.json`.
 
 ``` json
   "dependencies": {
@@ -32,7 +32,10 @@ Or add `jquery-smoove` to your `bower.json`.
 
 ### Download 
 
-[Download latest version](https://github.com/abeMedia/jquery-smoove/archive/0.2.6.zip)
+You can also just download the latest package and unzip in
+
+- [Download latest version](https://github.com/abeMedia/jquery-smoove/archive/0.2.6.zip)
+- `curl -O https://raw.github.com/abeMedia/jquery-smoove/master/jquery.smoove.js`
 
 ## Usage
 
