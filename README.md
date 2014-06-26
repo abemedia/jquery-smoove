@@ -16,8 +16,8 @@ This will initiate jQuery Smoove on the `.foo` elements with the default setting
 <div class="foo"></div>
 <div class="bar" data-move-x="-200px" data></div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="jquery.smoove.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js"></script>
 <script>
   // Attach Smoove to elements and set default options
   $(".foo, .bar").smoove({
@@ -62,7 +62,7 @@ Also note that when defining parameters via data-attributes, CamelCase names are
 
 ## Demo
 
-Visit [ABE Media Web Design](http://abemedia.co.uk) to see the plugin in action.
+Visit [ABE Media Web Design](http://abemedia.co.uk) and scroll down the page to see the plugin in action.
 
 
 ## Copyright
