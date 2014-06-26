@@ -32,10 +32,10 @@ Or simply add `jquery-smoove` to your project's `bower.json`.
 
 ### Download 
 
-You can also just download the latest package and unzip in
+You can also just download the latest package.
 
-- [Download latest version](https://github.com/abeMedia/jquery-smoove/archive/0.2.6.zip)
-- `curl -O https://raw.github.com/abeMedia/jquery-smoove/master/jquery.smoove.js`
+- [Download latest version](https://github.com/abeMedia/jquery-smoove/archive/master.zip)
+- or `curl -O https://raw.github.com/abeMedia/jquery-smoove/master/jquery.smoove.js`
 
 ## Usage
 
@@ -73,7 +73,7 @@ Also note that when defining parameters via data-attributes, CamelCase names are
 | `offset`  | integer or string  | 150 | Distance to the bottom of the screen before object glides into view e.g. `10%`. |
 | `opacity` | integer (0-100) | 0 | The opacity of the object before it comes into view. |
 | `perspective` | integer | 1000 | 3D perspective in pixels. |
-| `transformOrigin` | string | `50% 50%` | Origin of the transformin pixel, percentage or keyword (left, right, top or bottom). |
+| `transformOrigin` | string | `50% 50%` | Origin of the transform in pixel, percentage or keyword (left, right, top or bottom). |
 | `skewY`   | angle | none | 2D skew along Y-axis e.g. `90deg`. |
 | `move`    | string | none | 2D move along the X- and the Y-axis e.g. `100px,50%`. |
 | `move3d`  | string | none | 3D move along the X-, Y- and the Z-axis e.g. `10px,10px,10px`. |
