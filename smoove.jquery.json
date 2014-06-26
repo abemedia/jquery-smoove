@@ -28,7 +28,6 @@
     "homepage": "http://smoove.donlabs.com",
     "bugs": "https://github.com/abeMedia/jquery-smoove/issues",
     "docs": "http://smoove.donlabs.com",
-    "download": "http://smoove.donlabs.com",
     "dependencies": {
         "jquery": ">=1.5"
     }
