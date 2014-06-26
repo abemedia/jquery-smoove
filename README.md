@@ -66,7 +66,7 @@ This will initiate jQuery Smoove on the `.foo` elements with the default setting
 Also note that when defining parameters via data-attributes, CamelCase names are split with hyphens e.g. `moveX` becomes `data-move-x`.
 
 
-## Options
+### Options
 
 | Name      | Type | Default | Description |
 |-----------|------|---------|-------------|
