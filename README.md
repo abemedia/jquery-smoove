@@ -62,7 +62,7 @@ Also note that when defining parameters via data-attributes, CamelCase names are
 
 ## Demo
 
-Visit [ABE Media Web Design](http://abemedia.co.uk) to see the plugin in action.
+Visit [ABE Media Web Design](http://abemedia.co.uk) and scroll down the page to see the plugin in action.
 
 
 ## Copyright
