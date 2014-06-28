@@ -1,3 +1,6 @@
+/*! jQuery Smoove - Gorgeous CSS3 Scroll Effects - v0.2.6 - 2014-06-28
+* http://smoove.donlabs.com
+* Copyright (c) 2014 ABE Media - Web Design Brighton; Licensed GPL-2.0 */
 /*! jQuery Smoove v0.2.6 | (c) 2014 Adam Bouqdib | abemedia.co.uk/license */
 (function ($, window, document){
     
