@@ -44,7 +44,7 @@ module.exports = function(grunt) {
     qunit: {
       all: {
         options: {
-          urls: ['1.9.0', '2.0.0b1'].map(function(version) {
+          urls: ['1.4.0', '1.5.0', '1.6.0', '1.7.0','1.8.0', '1.9.0', '1.10.0', '2.0.0b1'].map(function(version) {
             return 'http://0.0.0.0:<%= connect.server.options.port %>/test/smoove.html?jquery=' + version;
           })
         }
