@@ -9,6 +9,3 @@ deploy:
   email: adam@abemedia.co.uk
   api_key:
     secure: dRbQr9FJxULs1vE3TVSWRSUSuBAeH9emy2s+8hweEZdpNLJaiUWIDFHGe754CiPZlL70vXKTVp+gHLIGViRTevE77LH2VHkrjZDItQNIRR7KiD6x2QuZ8iFgEojC+VQvIvGjqnP8uoeA6RHfONDxQiBD9/kRaBs8v6WArsqenTA=
-  on:
-    tags: true
-    repo: abeMedia/jquery-smoove
