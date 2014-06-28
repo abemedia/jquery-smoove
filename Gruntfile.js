@@ -34,15 +34,22 @@ module.exports = function(grunt) {
         dest: 'dist/jquery.<%= pkg.name %>.min.js'
       },
     },
+  connect: {
+      server: {
+        options: {
+          port: 8085
+        }
+      }
+    },
     qunit: {
-  all: {
-    options: {
-      urls: ['1.9.0', '2.0.0b1'].map(function(version) {
-        return 'http://0.0.0.0:<%= connect.server.options.port %>/test/plugin.html?jquery=' + version;
-      })
-    }
-  }
-},
+      all: {
+        options: {
+          urls: ['1.9.0', '2.0.0b1'].map(function(version) {
+            return 'http://0.0.0.0:<%= connect.server.options.port %>/test/smoove.html?jquery=' + version;
+          })
+        }
+      }
+    },
     jshint: {
       options: {
         jshintrc: true
@@ -70,13 +77,6 @@ module.exports = function(grunt) {
         files: '<%= jshint.test.src %>',
         tasks: ['jshint:test', 'qunit']
       },
-    },
-  connect: {
-      server: {
-        options: {
-          port: 8085
-        }
-      }
     }
   });
 
