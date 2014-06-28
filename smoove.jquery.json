@@ -1,16 +1,12 @@
 {
     "name": "smoove",
     "title": "jQuery Smoove - Gorgeous CSS3 Scroll Effects",
-    "version": "0.2.6",
     "description": "A simple jQuery plugin for super sexy scrolling effects using CSS3 transitions and transforms.",
-    "keywords": [
-        "jquery",
-        "scroll",
-        "css",
-        "animation"
-    ],
+    "version": "0.2.6",
+    "homepage": "http://smoove.donlabs.com",
     "author": {
         "name": "ABE Media - Web Design Brighton",
+        "email": "info@abemedia.co.uk",
         "url": "http://abemedia.co.uk"
     },
     "maintainers": [
@@ -19,16 +15,25 @@
             "web": "http://abemedia.co.uk"
         }
     ],
-    "licenses": [
-        {
-            "type": "GPLv2",
-            "url": "http://abemedia.co.uk/license"
-        }
-    ],
-    "homepage": "http://smoove.donlabs.com",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/abeMedia/jquery-smoove.git"
+    },
     "bugs": "https://github.com/abeMedia/jquery-smoove/issues",
     "docs": "http://smoove.donlabs.com",
-    "dependencies": {
-        "jquery": ">=1.5"
+    "licenses": [
+    {
+        "type": "GPL-2.0",
+        "url": "http://abemedia.co.uk/license"
     }
+    ],
+    "dependencies": {
+        "jquery": "*"
+    },
+    "keywords": [
+        "jquery",
+        "scroll",
+        "css",
+        "animation"
+    ]
 }
