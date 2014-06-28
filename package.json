@@ -21,9 +21,6 @@
     "url": "https://github.com/abeMedia/jquery-smoove/issues"
   },
   "main": "jquery.smoove.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
     "jquery": ">= 1.5"
   },
