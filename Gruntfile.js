@@ -35,8 +35,14 @@ module.exports = function(grunt) {
       },
     },
     qunit: {
-      files: ['test/**/*.html']
-    },
+  all: {
+    options: {
+      urls: ['1.9.0', '2.0.0b1'].map(function(version) {
+        return 'http://0.0.0.0:<%= connect.server.options.port %>/test/plugin.html?jquery=' + version;
+      })
+    }
+  }
+},
     jshint: {
       options: {
         jshintrc: true
@@ -85,6 +91,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);
-  
+  grunt.registerTask('test', ['connect', 'jshint', 'qunit']);
 
 };

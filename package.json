@@ -27,7 +27,7 @@
   "author": "Adam Bouqdib <adam@abemedia.co.uk> (http://abemedia.co.uk/)",
   "license": "GPL-2.0",
   "scripts": {
-    "test": "grunt qunit"
+    "test": "grunt test"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.10.0",
@@ -36,7 +36,7 @@
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-contrib-watch": "~0.4.0",
     "grunt-contrib-clean": "~0.4.0",
-    "grunt": "~0.4.5",
     "grunt-contrib-connect": "^0.8.0"
+    "grunt": "~0.4.5",
   }
 }
