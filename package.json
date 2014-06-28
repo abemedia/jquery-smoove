@@ -1,9 +1,10 @@
 {
   "name": "jquery-smoove",
-  "filename": "jquery.smoove.min.js",
-  "version": "0.2.6",
+  "title": "jQuery Smoove - Gorgeous CSS3 Scroll Effects",
+  "version": "0.2.7",
   "description": "A simple jQuery plugin for sexy scrolling effects using CSS3 transitions and transforms.",
   "homepage": "http://smoove.donlabs.com",
+  "author": "Adam Bouqdib (http://abemedia.co.uk/)",
   "keywords": [
     "jquery",
     "scroll",
@@ -20,11 +21,10 @@
   "bugs": {
     "url": "https://github.com/abeMedia/jquery-smoove/issues"
   },
-  "main": "jquery.smoove.js",
+  "main": "dist/jquery.smoove.js",
   "dependencies": {
-    "jquery": ">= 1.5"
+    "jquery": ">= 1.7"
   },
-  "author": "Adam Bouqdib <adam@abemedia.co.uk> (http://abemedia.co.uk/)",
   "license": "GPL-2.0",
   "scripts": {
     "test": "grunt test"

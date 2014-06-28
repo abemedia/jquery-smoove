@@ -1,39 +1,38 @@
 {
-    "name": "smoove",
-    "title": "jQuery Smoove - Gorgeous CSS3 Scroll Effects",
-    "description": "A simple jQuery plugin for super sexy scrolling effects using CSS3 transitions and transforms.",
-    "version": "0.2.6",
-    "homepage": "http://smoove.donlabs.com",
-    "author": {
-        "name": "ABE Media - Web Design Brighton",
-        "email": "info@abemedia.co.uk",
-        "url": "http://abemedia.co.uk"
-    },
-    "maintainers": [
-        {
-            "name": "Adam Bouqdib",
-            "web": "http://abemedia.co.uk"
-        }
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/abeMedia/jquery-smoove.git"
-    },
-    "bugs": "https://github.com/abeMedia/jquery-smoove/issues",
-    "docs": "http://smoove.donlabs.com",
-    "licenses": [
+  "name": "smoove",
+  "title": "jQuery Smoove - Gorgeous CSS3 Scroll Effects",
+  "version": "0.2.7",
+  "description": "A simple jQuery plugin for super sexy scrolling effects using CSS3 transitions and transforms.",
+  "homepage": "http://smoove.donlabs.com",
+  "author": {
+    "name": "ABE Media - Web Design Brighton",
+    "url": "http://abemedia.co.uk"
+  },
+  "maintainers": [
     {
-        "type": "GPL-2.0",
-        "url": "http://abemedia.co.uk/license"
+      "name": "Adam Bouqdib",
+      "web": "http://abemedia.co.uk"
     }
-    ],
-    "dependencies": {
-        "jquery": "*"
-    },
-    "keywords": [
-        "jquery",
-        "scroll",
-        "css",
-        "animation"
-    ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abeMedia/jquery-smoove.git"
+  },
+  "bugs": "https://github.com/abeMedia/jquery-smoove/issues",
+  "docs": "http://smoove.donlabs.com",
+  "licenses": [
+  {
+    "type": "GPL-2.0",
+    "url": "http://abemedia.co.uk/license"
+  }
+  ],
+  "dependencies": {
+    "jquery": ">= 1.7"
+  },
+  "keywords": [
+    "jquery",
+    "scroll",
+    "css",
+    "animation"
+  ]
 }

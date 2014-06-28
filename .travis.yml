@@ -1,6 +1,14 @@
 language: node_js
 node_js:
-  - "0.8"
-before_install: 
-  - npm install -g npm
-  - npm install -g grunt-cli
+- '0.8'
+before_install:
+- npm install -g npm
+- npm install -g grunt-cli
+deploy:
+  provider: npm
+  email: adam@abemedia.co.uk
+  api_key:
+    secure: dRbQr9FJxULs1vE3TVSWRSUSuBAeH9emy2s+8hweEZdpNLJaiUWIDFHGe754CiPZlL70vXKTVp+gHLIGViRTevE77LH2VHkrjZDItQNIRR7KiD6x2QuZ8iFgEojC+VQvIvGjqnP8uoeA6RHfONDxQiBD9/kRaBs8v6WArsqenTA=
+  on:
+    tags: true
+    repo: abeMedia/jquery-smoove
