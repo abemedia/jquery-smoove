@@ -4,6 +4,9 @@ node_js:
 before_install:
 - npm install -g npm
 - npm install -g grunt-cli
+after_install:
+- npm install bower
+- bower publish
 deploy:
   provider: npm
   email: adam@abemedia.co.uk
