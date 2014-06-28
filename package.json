@@ -1,9 +1,34 @@
 {
-  "name": "jquery-plugin",
-  "version": "0.0.0-ignored",
-  "engines": {
-    "node": ">= 0.8.0"
+  "name": "jquery-smoove",
+  "filename": "jquery.smoove.min.js",
+  "version": "0.2.6",
+  "description": "A simple jQuery plugin for sexy scrolling effects using CSS3 transitions and transforms.",
+  "homepage": "http://smoove.donlabs.com",
+  "keywords": [
+    "jquery",
+    "scroll",
+    "css",
+    "animation"
+  ],
+  "maintainers": [
+    "Adam Bouqdib (http://abemedia.co.uk)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abeMedia/jquery-smoove"
   },
+  "bugs": {
+    "url": "https://github.com/abeMedia/jquery-smoove/issues"
+  },
+  "main": "jquery.smoove.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jquery": ">= 1.5"
+  },
+  "author": "Adam Bouqdib <adam@abemedia.co.uk> (http://abemedia.co.uk/)",
+  "license": "GPL-2.0",
   "scripts": {
     "test": "grunt qunit"
   },
