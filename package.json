@@ -2,7 +2,7 @@
   "name": "jquery-smoove",
   "filename": "jquery.smoove.min.js",
   "version": "0.2.6",
-  "description": "A simple jQuery plugin for super sexy scrolling effects using CSS3 transitions and transforms.",
+  "description": "A simple jQuery plugin for sexy scrolling effects using CSS3 transitions and transforms.",
   "homepage": "http://smoove.donlabs.com",
   "keywords": [
     "jquery",
@@ -11,15 +11,22 @@
     "animation"
   ],
   "maintainers": [
-    {
-      "name": "Adam Bouqdib",
-      "web": "http://abemedia.co.uk"
-    }
+    "Adam Bouqdib (http://abemedia.co.uk)"
   ],
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/abeMedia/jquery-smoove"
-    }
-  ]
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abeMedia/jquery-smoove"
+  },
+  "bugs": {
+    "url": "https://github.com/abeMedia/jquery-smoove/issues"
+  },
+  "main": "jquery.smoove.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jquery": ">= 1.5"
+  },
+  "author": "Adam Bouqdib <adam@abemedia.co.uk> (http://abemedia.co.uk/)",
+  "license": "GPL-2.0"
 }
