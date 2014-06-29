@@ -1,4 +1,4 @@
-/*! jQuery Smoove v0.2.6 | (c) 2014 Adam Bouqdib | abemedia.co.uk/license */
+/* jQuery Smoove | (c) 2014 Adam Bouqdib | abemedia.co.uk/license */
 (function ($, window, document){
     
     $.fn.smoove = function (options){
@@ -19,20 +19,15 @@
     };
 
     $.fn.smoove.init = function (items, settings){
-        
-        // naughty way of avoiding vertical scrollbars when items slide in/out from the side
-        if($('body').width() === $(window).width()) {
-            $('body').css('overflow-x','hidden');
-        }
-        
         items.each(function() {
             var $item = $(this),
                 params = $item.params = $.extend({}, settings, $item.data());
                 
-            params.transition = crossBrowser('transition', params.transition, 'transform');
-            
-            $item.css(params.transition);
+            $item.params.opacity = $item.params.opacity / 100;
             $item.data('top', $item.offset().top);
+                
+            params.transition = crossBrowser('transition', params.transition, 'transform');
+            $item.css(params.transition);
             
             $.fn.smoove.items.push($item);
         });
@@ -68,6 +63,11 @@
                 oldWidth = $(window).width(),
                 oldDocHeight = $(document).height(),
                 resizing;
+        
+            // naughty way of avoiding vertical scrollbars when items slide in/out from the side
+            if($('body').width() === $(window).width()) {
+                $('body').css('overflow-x','hidden');
+            }
                 
             $(window).resize(function() {
                 clearTimeout(resizing);
@@ -147,9 +147,9 @@
                     var transforms = [],
                         properties = ['move','move3D','moveX','moveY','moveZ','rotate','rotate3d','rotateX','rotateY','rotateZ','scale','scale3d','scaleX','scaleY','skew','skewX','skewY'];
                         
-                    for(var property = 0; property < properties.length; property++) {
-                        if(typeof params[properties[property]] !== "undefined") {
-                            transforms[properties[property]] = params[properties[property]];
+                    for(var p = 0; p < properties.length; p++) {
+                        if(typeof params[properties[p]] !== "undefined") {
+                            transforms[properties[p]] = params[properties[p]];
                         }
                     }
                     
