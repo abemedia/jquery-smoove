@@ -136,7 +136,7 @@
                     params = $item.params,
                     height = $(window).height(),
                     // if direction isn't set, set offset to 0 to avoid hiding objects that are above the fold
-                    offset = (direction !== 'down') ? params.offset : 0,
+                    offset = (direction && !$item.css('opacity')) ? params.offset : 0,
                     itemtop = $(window).scrollTop() + height - $item.data('top');
                     
                 // offset in %
