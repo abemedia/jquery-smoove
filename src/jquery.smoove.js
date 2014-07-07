@@ -108,21 +108,21 @@
             
             $(window).on('load', function() {
                 smooveIt();
-            })
-            
-            // throttle scroll handler
-            .scroll(function() {
-                didScroll = true;
+                
+                // throttle scroll handler
+                $(window).scroll(function() {
+                    didScroll = true;
+                });
+                setInterval(function() {
+                    if ( didScroll ) {
+                        didScroll = false;
+                        var scrolltop = $(window).scrollTop(),
+                            direction = (scrolltop < oldScroll) ? direction = 'up' : 'down';
+                        oldScroll = scrolltop;
+                        smooveIt(direction);
+                    }
+                }, 250);
             });
-            setInterval(function() {
-                if ( didScroll ) {
-                    didScroll = false;
-                    var scrolltop = $(window).scrollTop(),
-                        direction = (scrolltop < oldScroll) ? direction = 'up' : 'down';
-                    oldScroll = scrolltop;
-                    smooveIt(direction);
-                }
-            }, 250);
         }
         
         function smooveIt(direction) {
@@ -131,7 +131,7 @@
                     params = $item.params,
                     height = $(window).height(),
                     // if direction isn't set, set offset to 0 to avoid hiding objects that are above the fold
-                    offset = (direction && !$item.css('opacity')) ? params.offset : 0,
+                    offset = (!direction || direction === 'down' && $item.css('opacity') === '1') ? 0 : params.offset,
                     itemtop = $(window).scrollTop() + height - $item.data('top');
                     
                 // offset in %
