@@ -3,7 +3,7 @@
   "description": "A simple jQuery plugin for super sexy scrolling effects using CSS3 transitions and transforms.",
   "version": "0.2.7",
   "main": "dist/jquery.smoove.js",
-  "homepage": "http://smoove.donlabs.com",
+  "homepage": "http://abemedia.co.uk/jquery-smoove/",
   "authors": [
     "Adam Bouqdib (http://abemedia.co.uk)"
   ],
