@@ -3,15 +3,17 @@ jQuery Smoove - Gorgeous CSS3 Scroll Effects
 
 Smoove makes it easy to implement awesome CSS3 transition effects, making your content smoothly glide into the page as your scroll down the page.
 
+[![Dependency Status](https://dependencyci.com/github/abeMedia/jquery-smoove/badge)](https://dependencyci.com/github/abeMedia/jquery-smoove)
+
 
 ## Setup
 
 ### Load from CDN
 
-The easiest way to get up and running is to load jQuery Smoove from [cdnjs](http://cdnjs.com). Make sure jQuery is loaded first though.
+The easiest way to get up and running is to load jQuery Smoove from [cdnjs](https://cdnjs.com/libraries/jquery-smoove). Make sure jQuery is loaded first though.
 
 ```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.8/jquery.smoove.min.js"></script>
 ```
 
 ### Install with Bower 
