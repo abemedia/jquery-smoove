@@ -1,7 +1,7 @@
 jQuery Smoove - Gorgeous CSS3 Scroll Effects
 =============
 
-Smoove makes it easy to implement awesome CSS3 transition effects, making your content smoothly glide into the page as your scroll down the page.
+Smoove makes it easy to implement awesome CSS3 transition effects, making your content smoothly glide into view as you scroll down the page.
 
 [![Build Status](https://travis-ci.org/abeMedia/jquery-smoove.svg?branch=master)](https://travis-ci.org/abeMedia/jquery-smoove)
 [![Dependency Status](https://dependencyci.com/github/abeMedia/jquery-smoove/badge)](https://dependencyci.com/github/abeMedia/jquery-smoove)
