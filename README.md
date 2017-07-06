@@ -14,7 +14,7 @@ Smoove makes it easy to implement awesome CSS3 transition effects, making your c
 The easiest way to get up and running is to load jQuery Smoove from [cdnjs](https://cdnjs.com/libraries/jquery-smoove). Make sure jQuery is loaded first though.
 
 ```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.9/jquery.smoove.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
 ```
 
 ### Install with Bower
@@ -54,7 +54,7 @@ This will initiate jQuery Smoove on the `.foo` elements with the default setting
 <div class="bar" data-move-x="-200px" data></div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.9/jquery.smoove.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
 <script>
   // Attach Smoove to elements and set default options
   $(".foo, .bar").smoove({
@@ -107,4 +107,4 @@ Visit [ABE Media Web Design](http://abemedia.co.uk) and scroll down the page to 
 
 ## Copyright
 
-&copy; 2014 - 2016 Adam Bouqdib - http://abemedia.co.uk
+&copy; 2014 - 2017 Adam Bouqdib - http://abemedia.co.uk
