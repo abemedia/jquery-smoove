@@ -76,7 +76,6 @@ Also note that when defining parameters via data-attributes, CamelCase names are
 | `min_width`  | integer  | 768 | Disable smoove on screens with less pixel width. |
 | `min_height`  | integer  | none | Disable smoove on screens with less pixel height. |
 | `offset`  | integer or string  | 150 | Distance to the bottom of the screen before object glides into view e.g. `10%`. |
-| `offset`  | integer or string  | 150 | Distance to the bottom of the screen before object glides into view e.g. `10%`. |
 | `opacity` | integer (0-100) | 0 | The opacity of the object before it comes into view. |
 | `perspective` | integer | 1000 | 3D perspective in pixels. |
 | `transformOrigin` | string | `50% 50%` | Origin of the transform in pixel, percentage or keyword (left, right, top or bottom). |
