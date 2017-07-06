@@ -17,7 +17,7 @@ The easiest way to get up and running is to load jQuery Smoove from [cdnjs](http
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.9/jquery.smoove.min.js"></script>
 ```
 
-### Install with Bower 
+### Install with Bower
 
 Use the following command to install jQuery Smoove using [bower](https://github.com/twitter/bower).
 
@@ -33,7 +33,7 @@ Or simply add `jquery-smoove` to your project's `bower.json`.
   }
 ```
 
-### Download 
+### Download
 
 You can also just download the latest package.
 
@@ -73,6 +73,9 @@ Also note that when defining parameters via data-attributes, CamelCase names are
 
 | Name      | Type | Default | Description |
 |-----------|------|---------|-------------|
+| `min_width`  | integer  | 768 | Disable smoove on screens with less pixel width. |
+| `min_height`  | integer  | none | Disable smoove on screens with less pixel height. |
+| `offset`  | integer or string  | 150 | Distance to the bottom of the screen before object glides into view e.g. `10%`. |
 | `offset`  | integer or string  | 150 | Distance to the bottom of the screen before object glides into view e.g. `10%`. |
 | `opacity` | integer (0-100) | 0 | The opacity of the object before it comes into view. |
 | `perspective` | integer | 1000 | 3D perspective in pixels. |
@@ -95,7 +98,7 @@ Also note that when defining parameters via data-attributes, CamelCase names are
 | `skew`    | angle | none | 2D skew along X- and the Y-axis (e.g. `90deg,90deg`). |
 | `skewX`   | angle | none | 2D skew along X-axis e.g. `90deg`. |
 | `skewY`   | angle | none | 2D skew along Y-axis e.g. `90deg`. |
- 
+
 
 ## Demo
 
