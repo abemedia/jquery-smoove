@@ -1,7 +1,7 @@
 {
   "name": "jquery-smoove",
   "description": "A simple jQuery plugin for sexy scrolling effects using CSS3 transitions and transforms.",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "main": "dist/jquery.smoove.js",
   "homepage": "http://smoove.js.org/",
   "authors": [

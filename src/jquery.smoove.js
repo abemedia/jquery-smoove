@@ -79,6 +79,27 @@
     }
   }
 
+  function throttle(fn, threshhold, scope) {
+    threshhold = threshhold || 250;
+    var last, deferTimer;
+    return function() {
+      var context = scope || this,
+        now = +new Date(),
+        args = arguments;
+      if (last && now < last + threshhold) {
+        // hold on to it
+        clearTimeout(deferTimer);
+        deferTimer = setTimeout(function() {
+          last = now;
+          fn.apply(context, args);
+        }, threshhold);
+      } else {
+        last = now;
+        fn.apply(context, args);
+      }
+    };
+  }
+
   $.fn.smoove = function(options) {
     $.fn.smoove.init(this, $.extend({}, $.fn.smoove.defaults, options));
     return this;
@@ -116,8 +137,7 @@
     if (!$.fn.smoove.loaded) {
       $.fn.smoove.loaded = true;
 
-      var didScroll = false,
-        oldScroll = 0,
+      var oldScroll = 0,
         oldHeight = $(window).height(),
         oldWidth = $(window).width(),
         oldDocHeight = $(document).height(),
@@ -128,7 +148,7 @@
         $('body').css('overflow-x', 'hidden');
       }
 
-      $(window).resize(function() {
+      $(window).on("orientationchange resize", function() {
         clearTimeout(resizing);
         resizing = setTimeout(function() {
           var height = $(window).height(),
@@ -168,18 +188,12 @@
         smooveIt();
 
         // throttle scroll handler
-        $(window).scroll(function() {
-          didScroll = true;
-        });
-        setInterval(function() {
-          if (didScroll) {
-            didScroll = false;
-            var scrolltop = $(window).scrollTop(),
-              direction = (scrolltop < oldScroll) ? direction = 'up' : 'down';
-            oldScroll = scrolltop;
-            smooveIt(direction);
-          }
-        }, 250);
+        $(window).on('scroll', throttle(function() {
+          var scrolltop = $(window).scrollTop(),
+            direction = (scrolltop < oldScroll) ? direction = 'up' : 'down';
+          oldScroll = scrolltop;
+          smooveIt(direction);
+        }, 250));
       });
     }
   };
